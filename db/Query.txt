@@ -19,5 +19,12 @@ FROM product_record
 RIGHT JOIN Customer ON C_ID= Customer_ID
 RIGHT JOIN department_store ON D_ID = Department_ID;
 
+4. Dashboard to check the completed one
+SELECT 
+COUNT(RepairStatus) AS Repair_Status
+FROM masterrepair.product_record
+WHERE RepairStatus ='Completed';
+
+
 
 
