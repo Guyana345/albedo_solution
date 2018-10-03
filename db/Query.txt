@@ -1,5 +1,6 @@
 1. Customer search for info
-SELECT PR.P_code as "Product Code", P.Product_Detail AS "Product Detail",repairStatus as "Repair Status",PR.dateRecievedFromCust as "Start Date",DS.Department_name AS "Department Store" from product_record AS PR 
+SELECT PR.P_code as "Product Code", P.Product_Detail AS "Product Detail", repairStatus as "Repair Status", PR.dateRecievedFromCust as "Start Date", DS.Department_name AS "Department Store" 
+FROM product_record AS PR 
 RIGHT JOIN Department_store AS DS ON PR.D_ID = DS.Department_ID
 RIGHT JOIN Product as P ON PR.P_Code=P.Product_code
 WHERE product_record_id=1023;
