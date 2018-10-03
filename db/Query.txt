@@ -5,12 +5,14 @@ RIGHT JOIN Product as P ON PR.P_Code=P.Product_code
 where product_record_id=1023;
 
 2. Incomplete
+CREATE VIEW Incomplete AS
 SELECT Product_Record_ID, RepairDetail, dateRecievedFromCust AS Date_In, Department_name, Fname AS Customer_Name, RepairStatus 
 FROM product_record 
 RIGHT JOIN Customer ON C_ID= Customer_ID
 RIGHT JOIN department_store ON D_ID = Department_ID; 
 
 3. Complete 
+CREATE VIEW Complete AS
 SELECT Product_Record_ID, RepairDetail, dateRecievedFromCust AS Date_In, Department_name, Fname AS Customer_Name
 (DATEDIFF(moneyRecieved_Date,dateRecievedFromCust)) As Days 
 FROM product_record 
