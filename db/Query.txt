@@ -1,10 +1,8 @@
 1. Customer search for info
+Select PR.P_code as "Product Code", P.Product_Detail AS "Product Detail",repairStatus as "Repair Status",PR.dateRecievedFromCust as "Start Date",DS.Department_name AS "Department Store" from product_record AS PR 
+RIGHT JOIN Department_store AS DS ON PR.D_ID = DS.Department_ID
+RIGHT JOIN Product as P ON PR.P_Code=P.Product_code
+where product_record_id=1023;
 
-SELECT P_Code AS "Product ID",DS.Department_Name as "Department Store", dateRecievedFromCust AS "Date Recieved", RepairStatus AS "Repair Status" FROM product_record AS PR
-RIGHT JOIN department_store AS DS ON PR.D_ID=DS.Department_ID
-WHERE PR.Product_Record_ID=$_POST['id'] AND PR.D_ID=DS.Department_ID;
 
-2. Insert New Repair Record
-
-INSERT INTO product_record(Product_Record_ID, P_Code,C_ID,D_ID,Date_Of_Purchase,dateRecievedFromCust,warranty_
 
