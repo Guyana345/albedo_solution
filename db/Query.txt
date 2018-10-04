@@ -48,7 +48,11 @@ SELECT count(*) as "RED FLAG"
 FROM Product_record 
 WHERE datediff(moneyRecieved_date,dateRecievedFromCust)>30;#Where 30 can be a limit set by the admin
 
+8.Add Shipping
+INSERT INTO shipping 
+VALUES('012345678','EMS','2018-08-09',null,'1000','303');
+
 OPTIONAL: EVEN BETTER IF
-8.Add new Repair Site
+9.Add new Repair Site
 
 
