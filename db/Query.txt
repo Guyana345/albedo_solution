@@ -27,5 +27,9 @@ FROM masterrepair.product_record
 WHERE RepairStatus ='Completed';
 
 
+5. Add new Record
+INSERT INTO product_record(Product_Record_ID,P_Code,C_ID,D_ID,Date_of_purchase,dateRecievedFromCust,warranty_ID,repairSite_siteID,RepairStatus,RepairDetail) 
+
+VALUES('1051','13','105','209','2017-05-05','2018-05-05','500','405','Completed','Ripped');
 
 
