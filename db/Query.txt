@@ -16,13 +16,9 @@ WHERE Status="Incomplete";
 3. Complete 
 CREATE VIEW Complete AS
 SELECT Product_Record_ID, RepairDetail, dateRecievedFromCust AS Date_In, moneyRecieved_date as "Date Completed",(DATEDIFF(moneyRecieved_Date,dateRecievedFromCust)) As Days, Department_name, Fname AS Customer_Name 
-
 FROM product_record 
-
 RIGHT JOIN Customer ON C_ID= Customer_ID
-
 RIGHT JOIN department_store ON D_ID = Department_ID
-
 WHERE moneyRecieved_date BETWEEN '2001-01-01' AND '2018-12-12';
 
 4. Dashboard to check the completed one
@@ -33,14 +29,11 @@ WHERE RepairStatus ='Completed';
 
 5. Add new Record
 INSERT INTO product_record(Product_Record_ID,P_Code,C_ID,D_ID,Date_of_purchase,dateRecievedFromCust,warranty_ID,repairSite_siteID,RepairStatus,RepairDetail) 
-
 VALUES('1051','13','105','209','2017-05-05','2018-05-05','500','405','Completed','Ripped');
 
 6.Update Repair Status
 UPDATE product_record
-
 SET sent_to_Factory=null, Recieved_from_Factory = null, cost=null,moneyRecieved_Date=null,RepairStatus='Completed'
-
 WHERE product_record_id ='1002';
 
 7. RED FLAG
