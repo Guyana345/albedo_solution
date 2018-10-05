@@ -46,7 +46,7 @@ WHERE product_record_id ='1002';
 7. RED FLAG
 SELECT count(*) as "RED FLAG" 
 FROM Product_record 
-WHERE datediff(moneyRecieved_date,dateRecievedFromCust)>30;#Where 30 can be a limit set by the admin
+WHERE datediff(moneyRecieved_date,dateRecievedFromCust)>30;#Where 30 can be a limit set by the admin but now let's just set it for them
 
 OPTIONAL: EVEN BETTER IF
 8.Add new Repair Site
