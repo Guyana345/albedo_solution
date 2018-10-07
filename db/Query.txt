@@ -1,5 +1,6 @@
 1. Customer search for info
-SELECT PR.P_code as "Product Code", P.Product_Detail AS "Product Detail", repairStatus as "Repair Status", PR.dateRecievedFromCust as "Start Date", DS.Department_name AS "Department Store" 
+SELECT PR.P_code as "Product Code", P.Product_Detail AS "Product Detail", repairStatus as "Repair Status", 
+        PR.dateRecievedFromCust as "Start Date", DS.Department_name AS "Department Store" 
 FROM product_record AS PR 
 RIGHT JOIN Department_store AS DS ON PR.D_ID = DS.Department_ID
 RIGHT JOIN Product as P ON PR.P_Code=P.Product_code
@@ -28,7 +29,8 @@ FROM product_record
 WHERE RepairStatus ='Completed';
 
 5. Add new Record
-INSERT INTO product_record(Product_Record_ID,P_Code,C_ID,D_ID,Date_of_purchase,dateRecievedFromCust,warranty_ID,repairSite_siteID,RepairStatus,RepairDetail) 
+INSERT INTO product_record(Product_Record_ID,P_Code,C_ID,D_ID,Date_of_purchase,dateRecievedFromCust,warranty_ID,
+       repairSite_siteID,RepairStatus,RepairDetail) 
 VALUES('1051','13','105','209','2017-05-05','2018-05-05','500','405','Completed','Ripped');
 
 6.Update Repair Status
@@ -39,7 +41,8 @@ WHERE product_record_id ='1002';
 7. RED FLAG
 SELECT count(*) as "RED FLAG" 
 FROM Product_record 
-WHERE datediff(moneyRecieved_date,dateRecievedFromCust)>30;#Where 30 can be a limit set by the admin but now let's just set it for them
+WHERE datediff(moneyRecieved_date,dateRecievedFromCust)>30;
+#Where 30 can be a limit set by the admin but now let's just set it for them
 
 8.Add Shipping
 INSERT INTO shipping 
